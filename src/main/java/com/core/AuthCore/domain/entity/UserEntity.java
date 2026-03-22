@@ -13,6 +13,9 @@ public class UserEntity {
     public UserEntity(UserEntity newuser) {
     }
 
+    public UserEntity(String username, String email, String password, String phone) {
+    }
+
     public UUID getId() {
         return id;
     }

@@ -1,4 +1,4 @@
-package com.core.AuthCore.domain.port.out;
+package com.core.AuthCore.application.port.out;
 
 import com.core.AuthCore.domain.entity.UserEntity;
 
@@ -12,6 +12,6 @@ public interface UserRepositoryCase {
     Optional<UserEntity> findById(UUID id);
     List<UserEntity> AllUsers();
     Optional<UserEntity> update(UUID id, UserEntity userEntity);
-    UserEntity delete(UUID id);
+    boolean delete(UUID id);
 
 }

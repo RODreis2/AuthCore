@@ -1,4 +1,4 @@
-package com.core.AuthCore.domain.port.in;
+package com.core.AuthCore.application.port.in;
 
 
 import com.core.AuthCore.domain.entity.UserEntity;
@@ -9,10 +9,10 @@ import java.util.UUID;
 
 public interface UserUseCase {
 
-    UserEntity CreateUser(UserEntity userEntity);
+    UserEntity CreateUser(String username, String password, String email, String phone);
     Optional<UserEntity> getFindById(UUID id);
     List<UserEntity> GetAllUsers();
     Optional<UserEntity> updateUser(UUID id, UserEntity userEntity);
-    UserEntity deleteUser(UUID id);
+    boolean deleteUser(UUID id);
 
 }
