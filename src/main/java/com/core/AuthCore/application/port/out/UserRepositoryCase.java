@@ -1,6 +1,6 @@
 package com.core.AuthCore.application.port.out;
 
-import com.core.AuthCore.domain.entity.UserEntity;
+import com.core.AuthCore.domain.model.UserModel;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,10 +8,10 @@ import java.util.UUID;
 
 public interface UserRepositoryCase {
 
-    UserEntity save(UserEntity userEntity);
-    Optional<UserEntity> findById(UUID id);
-    List<UserEntity> AllUsers();
-    Optional<UserEntity> update(UUID id, UserEntity userEntity);
+    UserModel save(UserModel userEntity);
+    Optional<UserModel> findById(UUID id);
+    List<UserModel> AllUsers();
+    Optional<UserModel> update(UUID id, UserModel userEntity);
     boolean delete(UUID id);
 
 }

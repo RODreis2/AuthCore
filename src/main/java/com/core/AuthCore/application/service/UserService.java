@@ -1,6 +1,6 @@
 package com.core.AuthCore.application.service;
 
-import com.core.AuthCore.domain.entity.UserEntity;
+import com.core.AuthCore.domain.model.UserModel;
 import com.core.AuthCore.application.port.in.UserUseCase;
 import com.core.AuthCore.application.port.out.PasswordHasher;
 import com.core.AuthCore.application.port.out.UserRepositoryCase;
@@ -20,25 +20,25 @@ public class UserService implements UserUseCase {
     }
 
     @Override
-    public UserEntity CreateUser(String username, String password, String email, String phone) {
+    public UserModel CreateUser(String username, String password, String email, String phone) {
 
         String hashedPassword = passwordHasher.hash(password);
-        UserEntity user = new UserEntity(username, email, password,phone);
+        UserModel user = new UserModel(username, email, password,phone);
         return userRepositoryCase.save(user);
     }
 
     @Override
-    public Optional<UserEntity> getFindById(UUID id){
+    public Optional<UserModel> getFindById(UUID id){
         return userRepositoryCase.findById(id);
     };
 
     @Override
-    public List<UserEntity> GetAllUsers(){
+    public List<UserModel> GetAllUsers(){
         return userRepositoryCase.AllUsers();
     };
 
     @Override
-    public Optional<UserEntity> updateUser(UUID id, UserEntity userEntity){
+    public Optional<UserModel> updateUser(UUID id, UserModel userEntity){
         return userRepositoryCase.update(id, userEntity);
     };
 

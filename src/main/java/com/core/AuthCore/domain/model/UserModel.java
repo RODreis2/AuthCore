@@ -1,8 +1,8 @@
-package com.core.AuthCore.domain.entity;
+package com.core.AuthCore.domain.model;
 
 import java.util.UUID;
 
-public class UserEntity {
+public class UserModel {
 
     private UUID id;
     private String username;
@@ -10,11 +10,15 @@ public class UserEntity {
     private String email;
     private String phone;
 
-    public UserEntity(UserEntity newuser) {
+    public UserModel(UserModel newuser) {
     }
 
-    public UserEntity(String username, String email, String password, String phone) {
+    public UserModel(String username, String email, String password, String phone) {
     }
+
+    public UserModel() {
+    }
+
 
     public UUID getId() {
         return id;
@@ -56,7 +60,7 @@ public class UserEntity {
         this.phone = phone;
     }
 
-    public UserEntity(UUID id, String username, String password, String email, String phone) {
+    public UserModel(UUID id, String username, String password, String email, String phone) {
         this.id = id;
         this.username = username;
         this.password = password;

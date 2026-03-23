@@ -1,16 +1,14 @@
-package com.core.AuthCore.infraestructure.adapters.in;
+package com.core.AuthCore.infraestructure.adapters.in.web;
 
 
 import com.core.AuthCore.application.port.in.UserUseCase;
-import com.core.AuthCore.application.port.out.UserRepositoryCase;
-import com.core.AuthCore.domain.entity.UserEntity;
-import com.core.AuthCore.infraestructure.dto.CreateUserRequest;
+import com.core.AuthCore.domain.model.UserModel;
+import com.core.AuthCore.infraestructure.adapters.dto.request.CreateUserRequest;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,8 +26,8 @@ public class UserController {
 
 
     @PostMapping
-    public ResponseEntity<UserEntity> createUser(@RequestBody CreateUserRequest request) {
-            UserEntity userEntity = userUseCase.CreateUser(
+    public ResponseEntity<UserModel> createUser(@RequestBody CreateUserRequest request) {
+            UserModel userEntity = userUseCase.CreateUser(
                     request.getUsername(),
                     request.getPassword(),
                     request.getEmail(),

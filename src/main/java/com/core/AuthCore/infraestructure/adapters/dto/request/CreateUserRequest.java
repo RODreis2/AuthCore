@@ -1,4 +1,4 @@
-package com.core.AuthCore.infraestructure.dto;
+package com.core.AuthCore.infraestructure.adapters.dto.request;
 
 public class CreateUserRequest {
 
